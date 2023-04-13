@@ -29,7 +29,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div style="text-align: center">
-                    <img class="logo" alt="Central do Oleo" src="./imagens/oleoquente.png" />
+                    <img id="logo" class="logo" alt="Central do Oleo" src="./imagens/oleoquente.png" />
                 </div>
                 <h3 class="text-center">
                     Pesquisa de Satisfação
@@ -77,9 +77,11 @@
             measurementId: "G-TV49GEPZQB"
         };
         firebase.initialzeApp(firebaseConfig)
-        var body = document.getElementById("corpo")
-        body.onload = carrega()
 
+        function inicializa(){
+            var logo = document.getElementById("logo")
+            logo.onclick =  carrega
+        }
         function carrega() {
             var tabela = document.getElementByID("carros")
             var ano = 2023
@@ -93,9 +95,9 @@
                     carro.atendimento + "</td><td>" +
                     carro.conhecimento + "</td><td>" +
                     carro.infraestrutura + "</td><td>" +
-                    carro.qualidadedoservico + "</td></tr>" 
+                    carro.qualidadedoservico + "</td></tr>"
 
-                    tabela.innerHtml += linha
+                tabela.innerHtml += linha
             })
         }
     </script>
