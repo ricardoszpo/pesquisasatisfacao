@@ -19,31 +19,56 @@
 
     .logo {
         margin-top: 1%;
-        width: 15%;
-        right: 15%;
+        width: 40%;
+        right: 35%;
     }
-    table{
+
+    table {
         width: 30%;
         margin: auto;
     }
-    td, tr{
+
+    td,
+    tr {
         border: 1px solid #000000;
         text-align: center;
         padding: 1px;
         font-size: 15px;
+    }
+
+    .inputs {
+        margin-left: 10%;
+        margin-top: 15%;
+    }
+    .inputs1 {
+        margin-left: 10%;
+        margin-top: 1%;
     }
 </style>
 
 <body id="corpo">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-4">
+                <input class="inputs" id="ano" type="text" placeholder="Ano:"><br>
+                <input class="inputs1" id="mes" type="text" placeholder="Mes:">
+            </div>
+            <div class="col-md-4">
                 <div style="text-align: center">
+
                     <img id="logo" class="logo" alt="Central do Oleo" src="./images/oleoquente.png" />
+
                 </div>
+
                 <h3 class="text-center">
-                    Pesquisa de Satisfação
+                    Resultados das pesquisas
                 </h3>
+
+            </div>
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-12">
                 <table class="table table-sm" id="carros">
                     <thead>
                         <tr>
@@ -89,8 +114,8 @@
         firebase.initializeApp(firebaseConfig)
 
 
-            var corpo = document.getElementById("corpo")
-            corpo.onload =  carrega()
+        var corpo = document.getElementById("corpo")
+        corpo.onload = carrega()
 
         function carrega() {
             var tabela = document.getElementById("carros")
