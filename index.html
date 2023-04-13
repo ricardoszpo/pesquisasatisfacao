@@ -22,6 +22,16 @@
         width: 15%;
         right: 15%;
     }
+    table{
+        width: 30%;
+        margin: auto;
+    }
+    td, tr{
+        border: 1px solid #000000;
+        text-align: center;
+        padding: 1px;
+        font-size: 15px;
+    }
 </style>
 
 <body id="corpo">
@@ -29,7 +39,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div style="text-align: center">
-                    <img id="logo" class="logo" alt="Central do Oleo" src="./imagens/oleoquente.png" />
+                    <img id="logo" class="logo" alt="Central do Oleo" src="./images/oleoquente.png" />
                 </div>
                 <h3 class="text-center">
                     Pesquisa de Satisfação
@@ -76,14 +86,14 @@
             appId: "1:129204417064:web:d528da356a236dfeeefb1d",
             measurementId: "G-TV49GEPZQB"
         };
-        firebase.initialzeApp(firebaseConfig)
+        firebase.initializeApp(firebaseConfig)
 
-        function inicializa(){
-            var logo = document.getElementById("logo")
-            logo.onclick =  carrega()
-        }
+
+            var corpo = document.getElementById("corpo")
+            corpo.onload =  carrega()
+
         function carrega() {
-            var tabela = document.getElementByID("carros")
+            var tabela = document.getElementById("carros")
             var ano = 2023
             var mes = 4
             var db = firebase.database().ref().child("clientes").child(ano).child(mes);
@@ -97,7 +107,7 @@
                     carro.infraestrutura + "</td><td>" +
                     carro.qualidadedoservico + "</td></tr>"
 
-                tabela.innerHtml += linha
+                tabela.innerHTML += linha
             })
         }
     </script>
