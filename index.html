@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/jpg" href="./images/oleoquente.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+    <title>Central do Oleo</title>
+</head>
+
+<body id="corpo">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <input id="ano" type="text" placeholder="Ano:"><br>
+                <input id="mes" type="text" placeholder="Mes:"><br>
+            </div>
+            <div class="col-md-4">
+                <div style="text-align: center">
+
+                    <img id="logo" class="logo" alt="Central do Oleo" src="./images/oleoquente.png"
+                        onclick="carrega()" />
+
+                </div>
+
+                <h3 class="text-center">
+                    Resultados das pesquisas
+                </h3>
+
+            </div>
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-12">
+                <table class="table table-sm" id="carros">
+                    <thead>
+                        <tr>
+                            <th>
+                                Placa
+                            </th>
+                            <th>
+                                Nome
+                            </th>
+                            <th>
+                                Atendimento
+                            </th>
+                            <th>
+                                Conhecimento
+                            </th>
+                            <th>
+                                Infraestrutura
+                            </th>
+                            <th>
+                                Qualidade do serviço
+                            </th>
+                            <th>
+                                Sobre
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+                <dl>
+                    Selecione um cliente desejado para obter mais informações
+                </dl>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase.js"></script>
+    <script src="funcoes.js" type="module"></script>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2 id="placaModal">placa do cliente</h2>
+            </div>
+            <div class="modal-body">
+                <p id="sugestoes">sugestoes</p>
+                <button id="excluir" class="btn-danger" style="margin-left: 0%;">Excluir</button>
+            </div>
+            <div class="modal-footer">
+                <h3 id="nomeModal">nome do cliente</h3>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
