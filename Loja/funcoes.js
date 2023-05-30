@@ -30,7 +30,6 @@ function modal(placa) {
     sugestao.innerHTML = "Sugestão: "+cliente.sugestoes
     var nome = document.getElementById("nomeModal")
     nome.innerHTML = cliente.nome
-    
 
     btnModal.onclick = function () {
         modal.style.display = "block"
@@ -64,7 +63,7 @@ function carrega() {
     var tabela = document.getElementById("carros")
     var ano = document.getElementById("ano").value
     var mes = document.getElementById("mes").value
-    var db = firebase.database().ref().child("clientes").child(ano).child(mes);
+    var db = firebase.database().ref().child("clientes").child(ano).child(mes)
     db.on('child_added', function (snapshot) {
         var carro = snapshot.val()
         var botaoid = "<td><button id='" + snapshot.key + "' class='btn-info'>Mais info</button></td>"
